@@ -1,4 +1,4 @@
-import { Button, Box } from "@chakra-ui/react";
+import { Button, Box, Table } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { GetAllTodos } from "./lib/todo";
 // import { RiArrowRightLine, RiMailLine } from "react-icons/ri"
@@ -25,9 +25,28 @@ export default function App() {
         return (
                 <>
                         <ul>
-                                {todos.map((todo) => (
+                                {/* {todos.map((todo) => (
                                         <li key={todo.id}><Box>{todo.title}</Box></li>
-                                ))}
+                                ))} */}
+
+                                <Table.Root size="sm">
+                                <Table.Header>
+                                        <Table.Row>
+                                        <Table.ColumnHeader>Title</Table.ColumnHeader>
+                                        <Table.ColumnHeader>done</Table.ColumnHeader>
+                                        <Table.ColumnHeader textAlign="end">CreatedAt</Table.ColumnHeader>
+                                        </Table.Row>
+                                </Table.Header>
+                                <Table.Body>
+                                        {todos.map((item) => (
+                                                <Table.Row key={item.id}>
+                                                <Table.Cell>{item.title}</Table.Cell>
+                                                <Table.Cell>{item.done ? "TRUE" : "FALSE"}</Table.Cell>
+                                                <Table.Cell textAlign="end">{item.created_at}</Table.Cell>
+                                        </Table.Row>
+                                        ))}
+                                </Table.Body>
+                                </Table.Root>
                         </ul>
                         {/* <VStack>
                                 <Button bg="red.300/40" >Button</Button>

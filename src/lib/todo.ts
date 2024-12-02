@@ -8,7 +8,8 @@ export async function GetAllTodos(): Promise<Todo[]> {
         }
 
         const todosData = response.data.map((todo) => {
-                return new Todo(todo.id, todo.title, todo.done, todo.created_at);
+                // newTodoを呼び出す
+                return Todo.newTodo(todo.id, todo.title, todo.done, todo.created_at);
         });
 
         return todosData;
