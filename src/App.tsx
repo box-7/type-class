@@ -1,4 +1,5 @@
-import { Button, Box, Table } from "@chakra-ui/react";
+// import { Button, Box, Table } from "@chakra-ui/react";
+import { Table } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { GetAllTodos } from "./lib/todo";
 // import { RiArrowRightLine, RiMailLine } from "react-icons/ri"
@@ -24,12 +25,13 @@ export default function App() {
 
         return (
                 <>
-                        <ul>
+                        <h1>Hello World</h1>
+                        {/* <ul> */}
                                 {/* {todos.map((todo) => (
                                         <li key={todo.id}><Box>{todo.title}</Box></li>
                                 ))} */}
 
-                                <Table.Root size="sm">
+                                {/* <Table.Root size="sm">
                                 <Table.Header>
                                         <Table.Row>
                                         <Table.ColumnHeader>Title</Table.ColumnHeader>
@@ -47,7 +49,7 @@ export default function App() {
                                         ))}
                                 </Table.Body>
                                 </Table.Root>
-                        </ul>
+                        </ul> */}
                         {/* <VStack>
                                 <Button bg="red.300/40" >Button</Button>
                                 <Button  bgColor="red.200" >Button</Button>
