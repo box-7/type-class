@@ -5,7 +5,10 @@ import { GetAllTodos } from "./lib/todo";
 
 import { useState } from "react";
 import { Todo } from "./domain/todo";
-import { Table } from "@chakra-ui/react";
+import { Table, VStack, Button   } from "@chakra-ui/react";
+import { RiArrowRightLine, RiMailLine } from "react-icons/ri"
+import { chakra } from "@chakra-ui/react"
+// import { VStack } from '@chakra-ui/react';
 
 export default function App() {
         const [todos, setTodos] = useState<Todo[]>([]);
@@ -29,7 +32,8 @@ export default function App() {
 
         return (
                 <>
-                        {/* <h1>Hello World</h1> */}
+                        <p>こんにちは</p>
+                        <h1>Hello World</h1>
 
                         <Table.Root size="sm">
                                 <Table.Header>
@@ -49,6 +53,51 @@ export default function App() {
                                         ))}
                                 </Table.Body>
                         </Table.Root>
+
+                        <VStack>
+                                <Button bg="red.300/40" >Button</Button>
+                                <Button  bgColor="red.200" >Button</Button>
+
+                                <Button colorPalette="teal" variant="solid" >
+                                        <RiMailLine /> Email
+                                </Button>
+
+                                <Button colorPalette="red" variant="outline">
+                                        Call us <RiArrowRightLine />
+                                </Button>
+
+                                <chakra.button
+                                        borderWidth="1px"
+                                        colorPalette="blue"
+                                        borderColor="colorPalette.500"
+                                        bgColor="red.200"
+                                        padding="4px 8px"
+                                        fontSize="16px"
+                                        borderRadius="xl"
+                                        _hover={{
+                                                borderColor: "gray.400",
+                                                backgroundColor: "red.800",
+                                        }}
+                                >
+                                        Click me
+                                </chakra.button>
+
+                                <chakra.button
+                                        // borderWidth="1px"
+                                        // colorPalette="blue"
+                                        // borderColor="colorPalette.500"
+                                        // bgColor="red.200"
+                                        padding="4px 8px"
+                                        fontSize="16px"
+                                        borderRadius="xl"
+                                        _hover={{
+                                                borderColor: "gray.400",
+                                                backgroundColor: "red.800",
+                                        }}
+                                >
+                                        Click me
+                                </chakra.button>
+                        </VStack>
 
                 </>
         )
