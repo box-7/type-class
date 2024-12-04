@@ -17,7 +17,7 @@ export default function App() {
         useEffect(() => {
                 const getAllTodosMethod = async () => {
                         const todoData = await GetAllTodos();
-                        // console.log(todoData);
+                        console.log(todoData);
                         setTodos(todoData);
                         setIsLoading(false);
                 }
@@ -35,7 +35,7 @@ export default function App() {
                         <p>こんにちは</p>
                         <h1>Hello World</h1>
 
-                        <Table.Root size="sm">
+                        <Table.Root size="sm" data-testid="table">
                                 <Table.Header>
                                         <Table.Row>
                                                 <Table.ColumnHeader>Title</Table.ColumnHeader>
